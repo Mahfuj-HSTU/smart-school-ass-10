@@ -9,14 +9,14 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
             <Container>
-                <Navbar.Brand href="#home"> <img src={ logo } alt="" width='40px' /> <span className='fs-4 fw-semibold'>Smart School</span></Navbar.Brand>
+                <Navbar.Brand href="#home"> <img src={ logo } alt="" width='40px' /> <span className='fs-3 fw-semibold me-3 text-primary'>Smart School</span></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto fs-5 fw-semibold">
-                        <Nav.Link href="#features"><Link to='/'>Home</Link></Nav.Link>
-                        <Nav.Link href="#courses"><Link to='/courses'>Courses</Link></Nav.Link>
-                        <Nav.Link href="#faq"><Link to='/faq'>FAQ</Link ></Nav.Link>
-                        <Nav.Link href="#pricing"><Link to='/blog'>Blog</Link></Nav.Link>
+                    <Nav className="me-auto fs-5 fw-semibold ">
+                        <Link className='text-decoration-none me-5 text-dark' to='/'>Home</Link>
+                        <Link className='text-decoration-none me-5 text-dark' Link to='/courses' > Courses</Link >
+                        <Link className='text-decoration-none me-5 text-dark' to='/faq'>FAQ</Link >
+                        <Link className='text-decoration-none me-5 text-dark' to='/blog'>Blog</Link>
                     </Nav>
                     <Nav>
                         <Nav.Link href="#deets">More deets</Nav.Link>
@@ -31,3 +31,6 @@ const Header = () => {
 };
 
 export default Header;
+
+
+{/*  */ }
