@@ -5,6 +5,7 @@ import Home from './components/Home/Home';
 import Courses from './components/Courses/Courses';
 import Faq from './components/Faq/Faq';
 import Blog from './components/Blog/Blog';
+import Course from './components/Courses/Course/Course';
 
 function App () {
   const router = createBrowserRouter( [
@@ -17,7 +18,7 @@ function App () {
           element: <Home></Home>
         },
         {
-          path: '/courses',
+          path: '/course',
           element: <Courses></Courses>,
           loader: () => fetch( 'https://education-server.vercel.app/courses' )
         },
@@ -29,6 +30,11 @@ function App () {
           path: '/blog',
           element: <Blog></Blog>
         },
+        {
+          path: '/course/:id',
+          loader: ( { params } ) => fetch( `https://education-server.vercel.app/courses/${ params.id }` ),
+          element: <Course></Course>
+        }
 
       ]
     }

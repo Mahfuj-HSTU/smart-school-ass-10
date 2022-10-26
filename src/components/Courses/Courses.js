@@ -14,10 +14,10 @@ const Courses = () => {
                         <Sidenav></Sidenav>
                     </Col>
                     <Col lg='9'>
-                        <div className="row my-5"> {
-                            courses.map( course => <CourseCard key={ course.id } course={ course }></CourseCard> )
-                        }
-
+                        <div className="row my-5">
+                            {
+                                courses.map( course => <CourseCard key={ course.id } course={ course }></CourseCard> )
+                            }
                         </div>
                     </Col>
                 </Row>

@@ -2,9 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CourseCard = ( { course } ) => {
-
     const { name, img, price } = course;
-    console.log( course );
+    // console.log( course );
 
     return (
         <div className='col-lg-4 col-md-6 my-3'>

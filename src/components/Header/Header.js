@@ -14,7 +14,7 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto fs-5 fw-semibold ">
                         <Link className='text-decoration-none me-5 text-dark' to='/'>Home</Link>
-                        <Link className='text-decoration-none me-5 text-dark' to='/courses' > Courses</Link >
+                        <Link className='text-decoration-none me-5 text-dark' to='/course' > Courses</Link >
                         <Link className='text-decoration-none me-5 text-dark' to='/faq'>FAQ</Link >
                         <Link className='text-decoration-none me-5 text-dark' to='/blog'>Blog</Link>
                     </Nav>
@@ -31,6 +31,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
-{/*  */ }
