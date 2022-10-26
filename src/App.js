@@ -18,7 +18,8 @@ function App () {
         },
         {
           path: '/courses',
-          element: <Courses></Courses>
+          element: <Courses></Courses>,
+          loader: () => fetch( 'https://education-server.vercel.app/courses' )
         },
         {
           path: '/faq',
@@ -27,7 +28,8 @@ function App () {
         {
           path: '/blog',
           element: <Blog></Blog>
-        }
+        },
+
       ]
     }
   ] )

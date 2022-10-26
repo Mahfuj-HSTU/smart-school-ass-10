@@ -63,33 +63,33 @@ const Home = () => {
             <div className='my-3'>
                 <h2>OUR EXPERIENCED PROFESSOR</h2>
                 <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life <br /> One day however a small line of blind text by the name</p>
-                <div class="card-group gap-4 mx-5 text-start mt-5">
-                    <div class="card shadow p-3 mb-5 bg-body rounded">
-                        <img src={ image5 } class="card-img-top" alt="..." height='400px' />
-                        <div class="card-body">
-                            <h5 class="card-title">Jhankar Mahbub</h5>
-                            <p class="card-text">Professor</p>
+                <div className="card-group gap-4 mx-5 text-start mt-5">
+                    <div className="card shadow p-3 mb-5 bg-body rounded">
+                        <img src={ image5 } className="card-img-top" alt="..." height='400px' />
+                        <div className="card-body">
+                            <h5 className="card-title">Jhankar Mahbub</h5>
+                            <p className="card-text">Professor</p>
                         </div>
                     </div>
-                    <div class="card shadow p-3 mb-5 bg-body rounded">
-                        <img src={ image6 } class="card-img-top" alt="..." height='400px' />
-                        <div class="card-body">
-                            <h5 class="card-title">Farhan Ahmed</h5>
-                            <p class="card-text">Instructor</p>
+                    <div className="card shadow p-3 mb-5 bg-body rounded">
+                        <img src={ image6 } className="card-img-top" alt="..." height='400px' />
+                        <div className="card-body">
+                            <h5 className="card-title">Farhan Ahmed</h5>
+                            <p className="card-text">Instructor</p>
                         </div>
                     </div>
-                    <div class="card shadow p-3 mb-5 bg-body rounded">
-                        <img src={ image7 } class="card-img-top" alt="..." height='400px' />
-                        <div class="card-body">
-                            <h5 class="card-title">Azizul Hakim Milton</h5>
-                            <p class="card-text">Teacher</p>
+                    <div className="card shadow p-3 mb-5 bg-body rounded">
+                        <img src={ image7 } className="card-img-top" alt="..." height='400px' />
+                        <div className="card-body">
+                            <h5 className="card-title">Azizul Hakim Milton</h5>
+                            <p className="card-text">Teacher</p>
                         </div>
                     </div>
-                    <div class="card shadow p-3 mb-5 bg-body rounded">
-                        <img src={ image8 } class="card-img-top" alt="..." height='400px' />
-                        <div class="card-body">
-                            <h5 class="card-title">Mir Hossain</h5>
-                            <p class="card-text">Professor</p>
+                    <div className="card shadow p-3 mb-5 bg-body rounded">
+                        <img src={ image8 } className="card-img-top" alt="..." height='400px' />
+                        <div className="card-body">
+                            <h5 className="card-title">Mir Hossain</h5>
+                            <p className="card-text">Professor</p>
                         </div>
                     </div>
                 </div>
