@@ -12,11 +12,6 @@ const Course = () => {
     const course = useLoaderData();
     // console.log( course );
     const { name, img, price, details, inst } = course;
-    // console.log( name )
-
-    //     conat handleDownload = () => {
-    //
-    //     }
     const ref = React.createRef();
     const options = {
         orientation: 'landscape',

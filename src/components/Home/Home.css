@@ -9,8 +9,21 @@
 	padding: 150px 0;
 	color: white;
 }
-.image img {
+/* .image img {
 	width: 300px;
 	height: 320px;
 	border-radius: 10px;
+} */
+@media only screen and (max-width: 768px) {
+	.bg-image {
+		padding: 20px 0;
+		height: 100%;
+		background-color: #2a2525;
+	}
+	.bg-image h1 {
+		margin-bottom: 0 !important;
+	}
+	.bg-image img {
+		margin: 0 !important;
+	}
 }

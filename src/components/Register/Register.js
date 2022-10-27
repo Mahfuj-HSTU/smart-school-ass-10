@@ -8,6 +8,7 @@ import { FaGithub } from 'react-icons/fa';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { toast } from 'react-hot-toast';
 import { AuthContext } from '../../context/AuthProvider';
+import './Register.css'
 
 const Register = () => {
     const [ error, setError ] = useState( '' )
@@ -82,7 +83,7 @@ const Register = () => {
     }
 
     return (
-        <Form onSubmit={ handleSubmit } className="custom w-25 mx-auto my-5 bg-light pt-4 pb-5 px-2 rounded-4 ">
+        <Form onSubmit={ handleSubmit } className="custom mx-auto my-5 bg-light pt-4 pb-5 px-2 rounded-4 ">
             <Form.Group className="mb-3 text-start" controlId="formBasicName">
                 <Form.Label>Your Name</Form.Label>
                 <Form.Control name="name" type="text" placeholder="Enter your name" />

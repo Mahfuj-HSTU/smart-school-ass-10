@@ -44,7 +44,7 @@ const Login = () => {
 
     return (
         <div>
-            <Form onSubmit={ handleSubmit } className="w-25 mx-auto my-5 bg-success pt-4 pb-5 px-2 bg-opacity-50 rounded-4">
+            <Form onSubmit={ handleSubmit } className="custom mx-auto my-5 bg-success pt-4 pb-5 px-2 bg-opacity-50 rounded-4">
                 <Form.Text className="fw-semibold text-dark">
                     <h2>Login</h2>
                 </Form.Text>

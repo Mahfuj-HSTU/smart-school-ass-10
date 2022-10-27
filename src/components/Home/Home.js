@@ -8,7 +8,6 @@ import image5 from '../../Images/instructor1.jpg';
 import image6 from '../../Images/instructor2.jpg';
 import image7 from '../../Images/instructor3.jpg';
 import image8 from '../../Images/instructor4.jpg';
-import image9 from '../../Images/desk_items.jpg';
 import './Home.css'
 
 const Home = () => {
