@@ -21,8 +21,8 @@ const Faq = () => {
                 <h3>OFFER SERVICES</h3>
                 <ul>
                     <li>Mobile App Development</li>
-                    <li> Website Services</li>
-                    <li> Ecommerce Development</li>
+                    <li>Website Services</li>
+                    <li>Ecommerce Development</li>
                     <li>Digital Marketing</li>
                     <li>Hire Dedicated Developers</li>
                     <li>Hire Dedicated Android App developers</li>

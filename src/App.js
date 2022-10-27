@@ -8,6 +8,8 @@ import Blog from './components/Blog/Blog';
 import Course from './components/Courses/Course/Course';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
+import PrivetRout from './components/PrivetRoute/PrivetRout';
+import Premium from './components/PrivetRoute/Premium/Premium';
 
 function App () {
   const router = createBrowserRouter( [
@@ -44,9 +46,17 @@ function App () {
         {
           path: '/register',
           element: <Register></Register>
-        }
-
+        },
+        {
+          path: '/premium-access/:id',
+          loader: ( { params } ) => fetch( `https://education-server.vercel.app/courses/${ params.id }` ),
+          element: <PrivetRout><Premium></Premium></PrivetRout>
+        },
       ]
+    },
+    {
+      path: '*',
+      element: <div><h2 className='text-danger mt-5'>Opps!! No address found.</h2></div>
     }
   ] )
   return (

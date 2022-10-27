@@ -3,12 +3,12 @@ import Carousel from 'react-bootstrap/Carousel';
 import image1 from '../../../Images/image1.jpg';
 import image2 from '../../../Images/image2.jpg';
 import image3 from '../../../Images/image3.jpg';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Course = () => {
-    const courses = useLoaderData();
-    console.log( courses );
-    const { name, img, price, details, inst } = courses;
+    const course = useLoaderData();
+    console.log( course );
+    const { name, img, price, details, inst } = course;
     // console.log( name )
     return (
         <div>
@@ -61,7 +61,7 @@ const Course = () => {
                         <p><b>Our Experienced Instructors : </b> { inst }</p>
                     </div>
                 </div>
-                <button type="button" class="btn btn-primary">Get Premium</button>
+                <Link to={ `/premium-access/${ course.id }` } className="btn btn-primary">Get Premium</Link>
             </div>
         </div>
     );

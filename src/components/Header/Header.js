@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -6,9 +6,12 @@ import { Link } from 'react-router-dom';
 import logo from '../../Images/logo.jpg';
 import { FaToggleOn, FaUser } from 'react-icons/fa';
 import { Button, Image } from 'react-bootstrap';
+import { AuthContext } from '../../context/AuthProvider';
 
 
 const Header = ( { toggleTheme } ) => {
+
+    const { user, logOut } = useContext( AuthContext )
 
 
     //     useEffect( () => {
@@ -35,6 +38,9 @@ const Header = ( { toggleTheme } ) => {
                         <Link className='text-decoration-none me-5 text-dark' to='/faq'>FAQ</Link >
                         <Link className='text-decoration-none me-5 text-dark' to='/blog'>Blog</Link>
                     </Nav>
+                    {/* <Nav.Link href='#deeds'>{ user }</Nav.Link>
+                    <Nav>
+                    </Nav> */}
                     <Nav>
                         <Link to='/profile'>
                             { user?.uid ?
@@ -48,10 +54,10 @@ const Header = ( { toggleTheme } ) => {
                                     <Button onClick={ handleLogOut } variant="light">Logout</Button>
                                 </>
                                 :
-                                <>
-                                    <Link to='/login'>Login</Link>
-                                    <Link to='/register'>Register</Link>
-                                </>
+                                <div>
+                                    <Link className='text-decoration-none me-3 text-dark' to='/login'>Login</Link>
+                                    <Link className='text-decoration-none me-2 text-dark' to='/register'>Register</Link>
+                                </div>
                             }
                         </Link>
                     </Nav>
