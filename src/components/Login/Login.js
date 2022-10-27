@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 import { toast } from 'react-hot-toast';
 
@@ -10,9 +10,7 @@ const Login = () => {
     const { signIn, setLoading } = useContext( AuthContext )
     const navigate = useNavigate();
     const location = useLocation();
-
     const from = location.state?.from.pathname || '/'
-
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -75,6 +73,10 @@ const Login = () => {
                 <Form.Text className="text-danger">
                     { error }
                 </Form.Text>
+                <Form.Group className="my-4 text start" controlId="formBasicCheckbox">
+                    <>New to Smart School <Link to='/register'>Create a account</Link></>
+                </Form.Group>
+
             </Form>
         </div>
     );

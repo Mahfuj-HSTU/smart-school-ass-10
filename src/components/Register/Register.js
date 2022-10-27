@@ -12,7 +12,6 @@ import { AuthContext } from '../../context/AuthProvider';
 const Register = () => {
     const [ error, setError ] = useState( '' )
     const [ accepted, setAccepted ] = useState( false )
-
     const { createUser, updateUserProfile, verifyEmail, providerLogin } = useContext( AuthContext )
 
     const googleProvider = new GoogleAuthProvider();
@@ -29,7 +28,7 @@ const Register = () => {
         createUser( email, password )
             .then( result => {
                 const user = result.user;
-                // console.log( user );
+                console.log( user );
                 form.reset();
                 setError( '' )
                 handleUpdateProfile( name, photoUrl )
@@ -121,6 +120,7 @@ const Register = () => {
                 { error }
             </Form.Text>
             <br /> <br />
+
             <ButtonGroup>
                 <Button onClick={ handleGoogleSignIn } className='mb-4 me-4' variant="outline-info"><FaGoogle></FaGoogle> Google</Button>
                 <Button onClick={ handleGithubSignIn } className='mb-4' variant="outline-dark"><FaGithub></FaGithub> Github</Button>

@@ -9,7 +9,6 @@ import { Button, Image } from 'react-bootstrap';
 import { AuthContext } from '../../context/AuthProvider';
 import { toast } from 'react-hot-toast';
 
-
 const Header = () => {
     const [ theme, setTheme ] = useState( "light" )
 
@@ -43,16 +42,17 @@ const Header = () => {
                         <Link className='text-decoration-none me-5 text-dark' to='/courses' > Courses</Link >
                         <Link className='text-decoration-none me-5 text-dark' to='/faq'>FAQ</Link >
                         <Link className='text-decoration-none me-5 text-dark' to='/blog'>Blog</Link>
+
                     </Nav>
 
                     <Nav>
                         <Link to='/'>
                             { user?.uid ?
                                 <>
-                                    <span className='me-2'>{ user.displayName }</span>
+                                    {/* <span className='me-2'>{ user.displayName }</span> */ }
                                     {
                                         user?.photoURL ?
-                                            <Image style={ { height: '40px' } } roundedCircle src={ user?.photoURL }></Image> :
+                                            <Image title={ user.displayName } style={ { height: '40px' } } roundedCircle src={ user?.photoURL }></Image> :
                                             <FaUser></FaUser>
                                     }
                                     <Button onClick={ handleLogOut } variant="light">Logout</Button>

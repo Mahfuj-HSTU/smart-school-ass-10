@@ -7,7 +7,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 
 const Course = () => {
     const course = useLoaderData();
-    console.log( course );
+    // console.log( course );
     const { name, img, price, details, inst } = course;
     // console.log( name )
     return (
