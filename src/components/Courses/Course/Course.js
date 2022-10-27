@@ -8,7 +8,7 @@ import { useLoaderData } from 'react-router-dom';
 const Course = () => {
     const courses = useLoaderData();
     console.log( courses );
-    const { name, img, price, details } = courses;
+    const { name, img, price, details, inst } = courses;
     // console.log( name )
     return (
         <div>
@@ -51,13 +51,17 @@ const Course = () => {
                 </Carousel.Item>
             </Carousel>
 
-            <div className='m-5 d-lg-flex gap-5'>
-                <img className='col-lg-6 col img-fluid' src={ img } alt="#" />
-                <div className="card-body col-lg-6 col text-start">
-                    <h3 className="card-title my-3 text-start">{ name }</h3>
-                    <h5 className='text-start mb-3'>Price: { price }</h5>
-                    <p className='fs-5'>{ details }</p>
+            <div className='mb-5'>
+                <div className='m-5 d-lg-flex gap-5'>
+                    <img className='col-lg-6 col img-fluid' src={ img } alt="#" />
+                    <div className="card-body col-lg-6 col text-start">
+                        <h3 className="card-title my-3 text-start">{ name }</h3>
+                        <h5 className='text-start mb-3'>Price: { price }</h5>
+                        <p className='fs-5'>{ details }</p>
+                        <p><b>Our Experienced Instructors : </b> { inst }</p>
+                    </div>
                 </div>
+                <button type="button" class="btn btn-primary">Get Premium</button>
             </div>
         </div>
     );
