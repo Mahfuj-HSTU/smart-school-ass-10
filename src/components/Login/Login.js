@@ -19,7 +19,7 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log( email, password )
+        // console.log( email, password )
 
         signIn( email, password )
             .then( result => {
@@ -39,15 +39,15 @@ const Login = () => {
                 console.error( e )
                 setError( e.message );
             } )
-        // .finally( () => {
-        //     setLoading( false )
-        // } )
+            .finally( () => {
+                setLoading( false )
+            } )
     }
 
     return (
         <div>
             <Form onSubmit={ handleSubmit } className="w-25 mx-auto my-5 bg-success pt-4 pb-5 px-2 bg-opacity-50 rounded-4">
-                <Form.Text className="fw-semibold">
+                <Form.Text className="fw-semibold text-dark">
                     <h2>Login</h2>
                 </Form.Text>
                 <Form.Group className="mb-3 text-start" controlId="formBasicEmail">

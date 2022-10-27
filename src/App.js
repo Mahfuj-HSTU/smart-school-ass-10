@@ -10,6 +10,7 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import PrivetRout from './components/PrivetRoute/PrivetRout';
 import Premium from './components/PrivetRoute/Premium/Premium';
+import { Toaster } from 'react-hot-toast';
 
 function App () {
   const router = createBrowserRouter( [
@@ -62,6 +63,7 @@ function App () {
   return (
     <div className="App">
       <RouterProvider router={ router }></RouterProvider>
+      <Toaster />
     </div>
   );
 }

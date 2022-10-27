@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { FaGoogle } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
-import { GoogleAuthProvider } from 'firebase/auth';
-// import { toast } from 'react-hot-toast';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import { toast } from 'react-hot-toast';
 import { AuthContext } from '../../context/AuthProvider';
 
 const Register = () => {
@@ -16,6 +16,7 @@ const Register = () => {
     const { createUser, updateUserProfile, verifyEmail, providerLogin } = useContext( AuthContext )
 
     const googleProvider = new GoogleAuthProvider();
+    const githubprovider = new GithubAuthProvider();
 
     const handleSubmit = ( event ) => {
         event.preventDefault();
@@ -24,17 +25,16 @@ const Register = () => {
         const photoUrl = form.photoUrl.value
         const email = form.email.value;
         const password = form.password.value;
-        // console.log( name, photoUrl, email, password )
 
         createUser( email, password )
             .then( result => {
                 const user = result.user;
-                console.log( user );
+                // console.log( user );
                 form.reset();
                 setError( '' )
-                // handleUpdateUserProfile( name, photoUrl )
+                handleUpdateProfile( name, photoUrl )
                 handleEmailVerification();
-                // toast.success( 'Please verify your email' )
+                toast.success( 'Please verify your email' )
             } )
             .catch( error => {
                 console.error( error )
@@ -51,15 +51,24 @@ const Register = () => {
             .catch( error => console.error( 'error ', error ) )
     }
 
-    // const handleUpdateUserProfile = ( name, photoURL ) => {
-    //     const profile = {
-    //         displayName: name,
-    //         photoURL: photoURL
-    //     }
-    //     updateUserProfile( profile )
-    //         .then( () => { } )
-    //         .catch( error => console.error( error ) )
-    // }
+    const handleGithubSignIn = () => {
+        providerLogin( githubprovider )
+            .then( result => {
+                const user = result.user;
+                console.log( user );
+            } )
+            .catch( error => console.error( 'error ', error ) )
+    }
+
+    const handleUpdateProfile = ( name, photoURL ) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateUserProfile( profile )
+            .then( () => { } )
+            .catch( error => console.error( error ) )
+    }
 
     const handleEmailVerification = () => {
         verifyEmail()
@@ -74,7 +83,7 @@ const Register = () => {
     }
 
     return (
-        <Form onSubmit={ handleSubmit } className="w-25 mx-auto my-5 bg-light pt-4 pb-5 px-2 rounded-4 ">
+        <Form onSubmit={ handleSubmit } className="custom w-25 mx-auto my-5 bg-light pt-4 pb-5 px-2 rounded-4 ">
             <Form.Group className="mb-3 text-start" controlId="formBasicName">
                 <Form.Label>Your Name</Form.Label>
                 <Form.Control name="name" type="text" placeholder="Enter your name" />
@@ -114,7 +123,7 @@ const Register = () => {
             <br /> <br />
             <ButtonGroup>
                 <Button onClick={ handleGoogleSignIn } className='mb-4 me-4' variant="outline-info"><FaGoogle></FaGoogle> Google</Button>
-                <Button className='mb-4' variant="outline-dark"><FaGithub></FaGithub> Github</Button>
+                <Button onClick={ handleGithubSignIn } className='mb-4' variant="outline-dark"><FaGithub></FaGithub> Github</Button>
             </ButtonGroup>
         </Form>
     );

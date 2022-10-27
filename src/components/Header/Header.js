@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -7,18 +7,24 @@ import logo from '../../Images/logo.jpg';
 import { FaToggleOn, FaUser } from 'react-icons/fa';
 import { Button, Image } from 'react-bootstrap';
 import { AuthContext } from '../../context/AuthProvider';
+import { toast } from 'react-hot-toast';
 
 
-const Header = ( { toggleTheme } ) => {
+const Header = () => {
+    const [ theme, setTheme ] = useState( "light" )
 
     const { user, logOut } = useContext( AuthContext )
 
-
-    //     useEffect( () => {
-    //         document.body.className = theme;
-    //     }, [ theme ] )
-    //
-
+    const toggleTheme = () => {
+        if ( theme === 'dark' ) {
+            setTheme( 'light' )
+            toast.success( 'This is light theme' )
+        }
+        else {
+            setTheme( 'dark' )
+            toast.success( 'This is dark theme' )
+        }
+    }
 
     const handleLogOut = () => {
         logOut()
@@ -38,17 +44,15 @@ const Header = ( { toggleTheme } ) => {
                         <Link className='text-decoration-none me-5 text-dark' to='/faq'>FAQ</Link >
                         <Link className='text-decoration-none me-5 text-dark' to='/blog'>Blog</Link>
                     </Nav>
-                    {/* <Nav.Link href='#deeds'>{ user }</Nav.Link>
+
                     <Nav>
-                    </Nav> */}
-                    <Nav>
-                        <Link to='/profile'>
+                        <Link to='/'>
                             { user?.uid ?
                                 <>
                                     <span className='me-2'>{ user.displayName }</span>
                                     {
                                         user?.photoURL ?
-                                            <Image style={ { height: '30px' } } roundedCircle src={ user?.photoURL }></Image> :
+                                            <Image style={ { height: '40px' } } roundedCircle src={ user?.photoURL }></Image> :
                                             <FaUser></FaUser>
                                     }
                                     <Button onClick={ handleLogOut } variant="light">Logout</Button>
