@@ -65,14 +65,14 @@ const Login = () => {
                 <Form.Text className="text-danger text-start fs-6 fw-semibold">
                     <p>Don't share your email and password</p>
                 </Form.Text>
-
-                <Button className='mt-4' variant="primary" type="submit">
+                <Form.Text className="text-danger fw-semibold text-start">
+                    <p> { error }</p>
+                </Form.Text> <br />
+                <Button className='mt-3 w-50' variant="primary" type="submit">
                     Login
                 </Button>
-                <br />
-                <Form.Text className="text-danger">
-                    { error }
-                </Form.Text>
+
+
                 <Form.Group className="my-4 text start" controlId="formBasicCheckbox">
                     <>New to Smart School <Link to='/register'>Create a account</Link></>
                 </Form.Group>

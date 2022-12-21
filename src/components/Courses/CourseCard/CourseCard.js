@@ -8,7 +8,7 @@ const CourseCard = ( { course } ) => {
     return (
         <div className='col-lg-4 col-md-6 my-3'>
             <div className='card p-2 shadow bg-body rounded'>
-                <img src={ img } class="card-img-top" alt="#" height='200px' />
+                <img src={ img } className="card-img-top" alt="#" height='200px' />
                 <div className="card-body">
                     <h5 className="card-title my-3 text-start">{ name }</h5>
                     <p className='text-start mb-3'>Price: { price }</p>

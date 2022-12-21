@@ -15,39 +15,45 @@ const Home = () => {
         <div>
             <Carousel>
                 <Carousel.Item interval={ 1000 }>
-                    <img
-                        className="d-block w-100"
-                        src={ image1 }
-                        alt=""
-                        height='550px'
-                    />
+                    <div className='carousel-img'>
+                        <img
+                            className="d-block w-100 "
+                            src={ image1 }
+                            alt=""
+                            height='550px'
+                        />
+                    </div>
                     <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h2>Welcome to Smart School</h2>
+                        <p>Find your favorite instructor and develop your skill</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item interval={ 500 }>
-                    <img
-                        className="d-block w-100"
-                        src={ image2 }
-                        alt=""
-                        height='550px'
-                    />
+                    <div className='carousel-img'>
+                        <img
+                            className="d-block w-100"
+                            src={ image2 }
+                            alt=""
+                            height='550px'
+                        />
+                    </div>
                     <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>Make yourself without any cost</h3>
+                        <p>Best online learning platform give you a chance to get ready.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src={ image3 }
-                        alt=""
-                        height='550px'
-                    />
+                    <div className='carousel-img'>
+                        <img
+                            className="d-block w-100"
+                            src={ image3 }
+                            alt=""
+                            height='550px'
+                        />
+                    </div>
                     <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>Help and Support</h3>
+                        <p>Live online classes and supports on zoom meeting.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>

@@ -34,7 +34,7 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
             <Container>
-                <Navbar.Brand href="#home"> <img src={ logo } alt="" width='40px' /> <span className='fs-3 fw-semibold me-3 text-primary'>Smart School</span></Navbar.Brand>
+                <Navbar.Brand> <img src={ logo } alt="" width='40px' /> <Link to='/' className='fs-3 fw-semibold me-3 text-primary text-decoration-none'>Smart School</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto fs-5 fw-semibold ">
@@ -66,7 +66,7 @@ const Header = () => {
                         </Link>
                     </Nav>
                 </Navbar.Collapse>
-                <button onClick={ toggleTheme } type="button" class="btn btn-light"><FaToggleOn /></button>
+                <button onClick={ toggleTheme } type="button" className="btn btn-light"><FaToggleOn /></button>
             </Container>
 
         </Navbar>
